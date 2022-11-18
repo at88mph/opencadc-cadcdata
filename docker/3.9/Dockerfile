@@ -3,7 +3,7 @@ FROM python:3.9-slim AS build
 RUN apt-get update \
     && apt-get install -y gcc make libssl-dev
 
-RUN pip --no-cache-dir install cadcutils
+RUN pip --no-cache-dir install cadcdata
 
 FROM python:3.9-slim
 
