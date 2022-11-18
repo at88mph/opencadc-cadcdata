@@ -5,6 +5,13 @@ RUN apt-get update \
 
 RUN pip --no-cache-dir install cadcdata
 
+FROM python:3.10-slim AS lib
+
+RUN apt update \
+    && apt install -y libmagic-dev
+
 FROM python:3.10-slim
 
+COPY --from=lib /usr/ /usr/
+COPY --from=lib /etc/ /etc/
 COPY --from=build /usr/local/ /usr/local/
