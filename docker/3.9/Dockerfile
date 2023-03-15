@@ -15,3 +15,5 @@ FROM python:3.9-slim
 COPY --from=lib /usr/ /usr/
 COPY --from=lib /etc/ /etc/
 COPY --from=build /usr/local/ /usr/local/
+
+CMD ["cadcget"]
