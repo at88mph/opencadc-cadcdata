@@ -7,6 +7,14 @@ on:
 
 jobs:
 
+  build-3_13:
+    uses: ./.github/workflows/docker.yml
+    secrets: inherit
+    with:
+      name: cadcdata
+      version: '3.13'
+      flavour: slim
+
   build-3_12:
     uses: ./.github/workflows/docker.yml
     secrets: inherit
@@ -21,12 +29,4 @@ jobs:
     with:
       name: cadcdata
       version: '3.11'
-      flavour: slim
-
-  build-3_10:
-    uses: ./.github/workflows/docker.yml
-    secrets: inherit
-    with:
-      name: cadcdata
-      version: '3.10'
       flavour: slim
